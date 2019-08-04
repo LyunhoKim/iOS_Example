@@ -11,11 +11,14 @@ import Photos
 
 class ViewController: UIViewController {
 
+    // IBOutlets
     @IBOutlet var photosTableView: UITableView!
+    
+    // Variables
     var fetchResult: PHFetchResult<PHAsset>!
     let imageManager: PHCachingImageManager = PHCachingImageManager()
     
-    
+    // Constants
     let cellIdentifier = "cell"
     
     
