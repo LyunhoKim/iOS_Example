@@ -1,30 +1,49 @@
 import RxSwift
 
+let one = 1
+let two = 2
+let three = 3
+
+Observable.of([one, two, three])
+    .subscribe{print($0)}
+
+print("************")
+
+Observable.from([one, two, three])
+    .subscribe{print($0)}
+
+
+print("************")
+
+Observable.just(1)
+    .subscribe {print($0)}
+
+print("************")
+
+Observable.range(start: 0, count: 5)
+    .subscribe {print($0)}
+
+print("************")
+
+Observable.of([one, two, three])
+//    .interval(1, scheduler: MainScheduler.instance)
+    .do(onNext: { (i) in
+        print(i)
+    }, onError: { (err) in
+        print(err.localizedDescription)
+    }, onCompleted: {
+        print("onCompleted")
+    }, onSubscribe: {
+        print("onSubscribe")
+    }, onSubscribed: {
+        print("onSubscribed")
+    }, onDispose: {
+        print("onDispose")
+    })
+    .subscribe { print($0) }
 
 
 
-//let observable = Observable.from([1, 2, 3])
-//
-//observable.subscribe(onNext: { element in
-//    print(element)
-//})
 
-
-
-//var nums = [1, 2, 3]
-//var index = 0
-//for _ in nums {
-//    print(nums[index])
-//    nums = [4, 5, 6]
-//}
-//print(nums)
-
-
-var nums = [1, 2, 3]
-for i in nums {
-    print(i)
-    nums = [4, 5, 6]
-}
-print(nums)
 
 
