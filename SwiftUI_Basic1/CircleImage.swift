@@ -10,10 +10,12 @@ import SwiftUI
 
 struct CircleImage: View {
     var body: some View {
-        Image("california-golden-gate-bridge-night")
+        Image("turtlerock")
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.gray, lineWidth: 4))
             .shadow(radius: 10)
+//            .aspectRatio(contentMode: .fit)
+//            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
     }
 }
 
